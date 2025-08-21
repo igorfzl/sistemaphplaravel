@@ -14,6 +14,8 @@ use App\Http\Controllers\AulaController;
 |
 */
 
+Route::get('/contador', [AulaController::class, 'contador']);
+
 Route::get('/data-hora', [AulaController::class, 'dataHora']);
 
 Route::get('/usuario/{id}', [AulaController::class, 'usuario']);
@@ -26,7 +28,7 @@ Route::get('/formulario', [AulaController::class, 'formulario']);
 
 route::post('/receber-dados', [AulaController::class, 'receber-dados']);
 
-Route::get('/nome/{nome}', [AulaController::class,'mostraNome']);
+Route::get('/nome/{nome}', [AulaController::class, 'mostraNome']);
 
 Route::get('/mensagem', [AulaController::class, 'mensagem']);
 
@@ -44,4 +46,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

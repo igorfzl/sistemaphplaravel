@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class AulaController extends Controller
 {
+    public function contador(Request $request)
+    {
+        $contador = $request->session()->get('contador', 0);
+        $contador++;
+        request()->session()->put('contador', $contador);
+        return view('contador', compact('contador'));
+    }
+
+
     public function dataHora()
     {
         $dataHora = now()->format('d/m/Y H:i:s');
