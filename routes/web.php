@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AulaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/data-hora', [AulaController::class, 'dataHora']);
+
+Route::get('/usuario/{id}', [AulaController::class, 'usuario']);
+
+Route::get('/produtos', [AulaController::class, 'produtos']);
+
+Route::get('/soma/{num1}/{num2}', [AulaController::class, 'soma']);
+
+Route::get('/formulario', [AulaController::class, 'formulario']);
+
+route::post('/receber-dados', [AulaController::class, 'receber-dados']);
+
+Route::get('/nome/{nome}', [AulaController::class,'mostraNome']);
+
+Route::get('/mensagem', [AulaController::class, 'mensagem']);
+
+Route::get('/tsi/backend2/teste', function () {
     return view('welcome');
 });
 
